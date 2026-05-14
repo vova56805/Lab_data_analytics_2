@@ -64,6 +64,7 @@ docker compose up --build
 2. модель обязана сначала вызвать `run_python`, а не писать отчёт по промпту;
 3. Python запускается во временной папке с timeout;
 4. AST-фильтр блокирует опасные imports, `open`, `eval`, `exec`, системные вызовы, доступ к `.env`, URL и системным путям;
-
-
+   
+# Бот для тестирования
+https://t.me/LLM_Analytics_Bot
 
