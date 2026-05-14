@@ -2,20 +2,13 @@
 
 Минимальный Telegram-бот на Python: пользователь отправляет CSV/XLSX/XLS, бот возвращает EDA-отчёт, ключевые метрики, инсайты и PNG-графики.
 
-LLM вызывается программно через OpenRouter API. Анализ выполняется не текстовой подстановкой характеристик датасета, а через tool-call `run_python`, который запускает локальный Python-интерпретатор во временной папке.
-
-## Переменные окружения
-
-Перед запуском создайте `.env` из шаблона:
+## Запуск
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 cp .env.example .env
-```
-
-Windows PowerShell:
-
-```powershell
-copy .env.example .env
 ```
 
 Заполните `.env`:
@@ -26,14 +19,9 @@ OPENROUTER_API_KEY=...
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-
-
-## Локальный запуск
+Запустите:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
 python main.py
 ```
 
@@ -41,42 +29,22 @@ python main.py
 
 ## Запуск через Docker
 
-Перед запуском должен быть установлен и запущен Docker.
-
-Создайте и заполните `.env`:
-
 ```bash
 cp .env.example .env
 ```
 
-Windows PowerShell:
+Заполните `.env`:
 
-```powershell
-copy .env.example .env
+```env
+TELEGRAM_BOT_TOKEN=...
+OPENROUTER_API_KEY=...
+OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
 Соберите и запустите контейнер:
 
 ```bash
 docker compose up --build
-```
-
-Запуск в фоне:
-
-```bash
-docker compose up -d --build
-```
-
-Просмотр логов:
-
-```bash
-docker compose logs -f
-```
-
-Остановка:
-
-```bash
-docker compose down
 ```
 
 ## Защита от prompt-injection
