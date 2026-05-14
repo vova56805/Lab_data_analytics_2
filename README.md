@@ -11,7 +11,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Заполните `.env`:
+Заполнить `.env`:
 
 ```env
 TELEGRAM_BOT_TOKEN=...
@@ -19,7 +19,7 @@ OPENROUTER_API_KEY=...
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-Запустите:
+Запустить:
 
 ```bash
 python main.py
@@ -33,7 +33,7 @@ python main.py
 cp .env.example .env
 ```
 
-Заполните `.env`:
+Заполнить `.env`:
 
 ```env
 TELEGRAM_BOT_TOKEN=...
@@ -41,12 +41,21 @@ OPENROUTER_API_KEY=...
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-Соберите и запустите контейнер:
+Соберить и запустить контейнер:
 
 ```bash
 docker compose up --build
 ```
+## Как работает
 
+1. Пользователь отправляет CSV/XLSX/XLS-файл в Telegram-бота.
+
+2. Бот сохраняет файл во временную папку и отправляет задачу в LLM через OpenRouter API.
+
+3. LLM вызывает tool `run_python`, где локальный Python-интерпретатор анализирует датасет и строит графики.
+
+4. Бот возвращает пользователю финальный EDA-отчёт, метрики, инсайты и PNG-графики.
+   
 ## Защита от prompt-injection
 
 В проекте есть несколько базовых уровней защиты:
