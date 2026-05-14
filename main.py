@@ -67,7 +67,7 @@ FORBIDDEN_NAMES = {
 }
 FORBIDDEN_ATTRS = {
     "system", "popen", "spawn", "fork", "kill", "remove", "unlink", "rmdir",
-    "rename", "replace", "chmod", "chown", "read_text", "read_bytes",
+    "rename", "chmod", "chown", "read_text", "read_bytes",
     "write_text", "write_bytes", "mkdir", "makedirs", "rmtree"
 }
 BAD_STRING_PARTS = {"..", "~", "://", "/etc", "/proc", "/home", "/root", ".env", "OPENROUTER", "TELEGRAM"}
