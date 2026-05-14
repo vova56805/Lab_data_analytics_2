@@ -26,7 +26,7 @@ OPENROUTER_API_KEY=...
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-Файл `.env` нельзя загружать в GitHub. В репозиторий добавляется только `.env.example`.
+
 
 ## Локальный запуск
 
