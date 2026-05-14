@@ -41,7 +41,7 @@ OPENROUTER_API_KEY=...
 OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 
-Соберить и запустить контейнер:
+Собрать и запустить контейнер:
 
 ```bash
 docker compose up --build
