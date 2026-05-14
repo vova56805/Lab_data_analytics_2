@@ -1,0 +1,7 @@
+services:
+  llm-analytics-bot:
+    build: .
+    container_name: llm-analytics-bot
+    restart: unless-stopped
+    env_file:
+      - .env
