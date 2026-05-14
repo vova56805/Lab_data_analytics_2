@@ -68,3 +68,6 @@ docker compose up --build
 # Бот для тестирования
 https://t.me/LLM_Analytics_Bot
 
+#  скрины работы приложения
+в папке (screenshots)
+
